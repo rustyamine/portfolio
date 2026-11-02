@@ -56,7 +56,6 @@ export function gridEffects() {
 export function typeHero() {
   const lines = [...document.querySelectorAll(".typed")];
   const texts = lines.map((l) => l.textContent);
-  const more = ["and fight css.", "and love the terminal.", "and push to git.", texts[2]];
   if (reduce) return null;
 
   lines.forEach((l) => (l.textContent = ""));
@@ -70,19 +69,8 @@ export function typeHero() {
   });
   tl.from(".sub, .sticker", { opacity: 0, y: 20, duration: 0.6, stagger: 0.15 });
   tl.from(".sticker", { rotation: 12, duration: 0.5, ease: "back.out(3)" }, "<");
-
-  let current = texts[2];
-  const loop = gsap.timeline({ repeat: -1, delay: 1 });
-  more.forEach((next) => {
-    loop.to({}, { duration: 2 });
-    loop.to(lines[2], { text: "", duration: current.length * 0.03, ease: "none" });
-    loop.to(lines[2], { text: next, duration: next.length * 0.06, ease: "none" });
-    current = next;
-  });
-  tl.add(loop);
   return tl;
 }
-
 // marquee under the hero
 export function marquee() {
   if (reduce) return;
