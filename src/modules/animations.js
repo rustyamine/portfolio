@@ -67,6 +67,7 @@ export function typeHero() {
   });
   tl.from(".sub, .sticker", { opacity: 0, y: 20, duration: 0.6, stagger: 0.15 });
   tl.from(".sticker", { rotation: 12, duration: 0.5, ease: "back.out(3)" }, "<");
+  tl.add(swapLine(lines[2], [texts[2], "and larp my way up."]));
   return tl;
 }
 export function marquee() {
@@ -121,4 +122,16 @@ export function tileHover() {
     const icon = tile.firstElementChild;
     tile.addEventListener("mouseenter", () => gsap.fromTo(icon, { scale: 1, rotation: 0 }, { scale: 1.35, rotation: -10, duration: 0.15, yoyo: true, repeat: 1 }));
   });
+}
+
+function swapLine(line, phrases) {
+  const loop = gsap.timeline({ repeat: -1 });
+  phrases.forEach((phrase, i) => {
+    const next = phrases[(i + 1) % phrases.length];
+    loop.to({}, { duration: 2.5 });
+    loop.to(line, { text: "", duration: phrase.length * 0.03, ease: "none" });
+    loop.to(".sticker", { rotation: 4, yoyo: true, repeat: 1, duration: 0.12 }, "<");
+    loop.to(line, { text: next, duration: next.length * 0.06, ease: "none" });
+  });
+  return loop;
 }
