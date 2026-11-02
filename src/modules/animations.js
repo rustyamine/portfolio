@@ -8,7 +8,6 @@ const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const canHover = matchMedia("(hover: hover)").matches;
 const $ = (s) => document.querySelector(s);
 
-// intro screen
 export function playIntro(onDone) {
   const intro = $("#intro");
   if (reduce) { intro.remove(); onDone(); return; }
@@ -52,7 +51,6 @@ export function gridEffects() {
   });
 }
 
-// typing effect
 export function typeHero() {
   const lines = [...document.querySelectorAll(".typed")];
   const texts = lines.map((l) => l.textContent);
@@ -71,7 +69,6 @@ export function typeHero() {
   tl.from(".sticker", { rotation: 12, duration: 0.5, ease: "back.out(3)" }, "<");
   return tl;
 }
-// marquee under the hero
 export function marquee() {
   if (reduce) return;
   const tween = gsap.to("#marquee", { xPercent: -50, duration: 25, ease: "none", repeat: -1 });
@@ -94,7 +91,6 @@ export function showCards(gridSelector, item = ".card") {
   });
 }
 
-// cards tilt when the mouse moves
 export function tilt(selector) {
   if (reduce || !canHover) return;
   gsap.utils.toArray(selector).forEach((card) => {

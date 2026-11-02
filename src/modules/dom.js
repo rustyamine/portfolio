@@ -11,7 +11,6 @@ function makeTags(list) {
   return ul;
 }
 
-// one card per project
 export function createProjectCard(project) {
   const card = el("article", "card");
   const bar = el("div", "bar");

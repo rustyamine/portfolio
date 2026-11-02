@@ -6,7 +6,6 @@ function apply(theme, button) {
 }
 
 export function initTheme(button) {
-  // check if a theme was saved before
   const saved = localStorage.getItem(KEY);
   const osDark = matchMedia("(prefers-color-scheme: dark)").matches;
   apply(saved || (osDark ? "dark" : "light"), button);
