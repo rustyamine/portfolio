@@ -4,6 +4,7 @@ export const config = {
   links: {
     github: "https://github.com/rustyamine",
     instagram: "https://www.instagram.com/0xamine__/",
+    linkedin: "https://www.linkedin.com/in/rusty-amine-amalou/",
     discord: "https://discord.com/users/1273426056082100424",
   },
   skills: [
