@@ -27,7 +27,6 @@ config.skills.forEach((group) => {
 const names = config.skills.flatMap((g) => g.items.map((s) => s.name));
 [...names, ...names].forEach((n) => $("#marquee").append(el("span", "", n)));
 
-// get my repos from github
 async function loadRepos() {
   const status = $("#repo-status");
   status.textContent = "loading repos...";

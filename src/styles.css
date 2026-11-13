@@ -25,7 +25,7 @@ button:hover { background: var(--ink); color: var(--bg); }
 .big { margin: 0; font-size: clamp(2.8rem, 9vw, 7rem); font-weight: 900; line-height: 0.98; letter-spacing: -0.03em; }
 .line { display: block; overflow: hidden; padding-bottom: 0.08em; } 
 .line span { display: inline-block; }
-.line:nth-child(2) span { color: var(--red); }
+.line:nth-child(3) span { color: var(--red); }
 .sub { max-width: 34ch; margin: 24px 0 0; font-size: 1.25rem; }
 .sticker { display: inline-block; margin-top: 20px; padding: 4px 10px; background: var(--red); color: #fff; font-weight: 700; border-radius: 4px; transform: rotate(-4deg); }
 
